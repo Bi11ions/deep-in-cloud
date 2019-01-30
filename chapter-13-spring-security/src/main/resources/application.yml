@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+spring:
+  thymeleaf:
+    cache: false
+    mode: HTML5
+    encoding: UTF-8
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://47.106.240.136:3306/cloudDB01
+    # 数据源类型
+    type: com.alibaba.druid.pool.DruidDataSource
+    # 数据源其他配置
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
